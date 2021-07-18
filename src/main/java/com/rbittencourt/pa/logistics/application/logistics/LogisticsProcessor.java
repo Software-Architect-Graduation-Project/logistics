@@ -25,7 +25,7 @@ public class LogisticsProcessor {
     public void process(EcommerceOrder ecommerceOrder) {
         kafkaTemplate.send("organizing_logistics_started", ecommerceOrder);
 
-        LogisticsRecord logisticsRecord = new LogisticsRecord(ecommerceOrder.getId(), ecommerceOrder.getProducts());
+        LogisticsRecord logisticsRecord = new LogisticsRecord(ecommerceOrder.getId(), ecommerceOrder.getClientId());
         logisticsRepository.save(logisticsRecord);
 
         kafkaTemplate.send("ready_to_delivery", ecommerceOrder);
