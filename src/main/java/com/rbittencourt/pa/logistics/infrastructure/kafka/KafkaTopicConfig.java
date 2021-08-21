@@ -27,12 +27,12 @@ public class KafkaTopicConfig {
 
     @Bean
     public NewTopic organizingLogisticsStarted() {
-        return new NewTopic("organizing_logistics_started", 1, (short) 1);
+        return new NewTopic("organizing_logistics_started", 2, (short) 1);
     }
 
     @Bean
     public NewTopic readyToDelivery() {
-        return new NewTopic("ready_to_delivery", 1, (short) 1);
+        return new NewTopic("ready_to_delivery", 2, (short) 1);
     }
 
 }
